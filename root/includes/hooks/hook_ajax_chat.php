@@ -33,6 +33,7 @@ abstract class hook_ajax_chat
 
 		// Register all the hooks
 		$phpbb_hook->register('phpbb_user_session_handler', 'hook_ajax_chat::_init');
+		$phpbb_hook->register(array('template', 'display'), 'hook_ajax_chat::_set_global_template_vars');
 	}
 
 	/**
@@ -51,6 +52,20 @@ abstract class hook_ajax_chat
 		// Load all the required classes
 		ajax_chat_phpbb::init();
 		ajax_chat_core::get_instance();
+	}
+
+	/**
+	 * Just before the page gets outputted this hook sets some required template vars
+	 * @param	phpbb_hook	$phpbb_hook	The phpBB hook object
+	 * @return	void
+	 */
+	static public function _set_global_template_vars(phpbb_hook $phpbb_hook)
+	{
+		$web_path = (defined('PHPBB_USE_BOARD_URL_PATH') && PHPBB_USE_BOARD_URL_PATH) ? generate_board_url() . '/' : PHPBB_ROOT_PATH;
+
+		ajax_chat_phpbb::$template->assign_vars(array(
+			'T_AJAX_CHAT_SCRIPTS_PATH'	=> "{$web_path}styles/scripts",
+		));
 	}
 }
 
