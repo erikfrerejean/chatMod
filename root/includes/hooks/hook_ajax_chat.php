@@ -19,7 +19,7 @@ if (!defined('IN_PHPBB'))
  * Class that control all used hooks
  * @package Ajax Chat
  */
-class hook_ajax_chat
+abstract class hook_ajax_chat
 {
 	/**
 	 * Method that registers all hooks
