@@ -23,5 +23,28 @@ if (!defined('IN_PHPBB') || !defined('IN_CHAT'))
  * The version numbering must otherwise be compatible with the version_compare function - http://php.net/manual/en/function.version-compare.php
  */
 $versions = array(
-
+	'0.0.1' => array(
+		// Add the main chat table
+		'table_add' => array(
+			// The main Subject Prefix table
+			array(AJAX_CHAT_TABLE, array(
+				'COLUMNS'	=> array(
+					'id'					=> array('UINT', NULL, 'auto_increment'),
+					'poster_id'				=> array('UINT', 0),
+					'poster_ip'				=> array('VCHAR:40', ''),
+					'chat_time'				=> array('UINT:11', 0),
+					'chat_username'			=> array('VCHAR', ''),
+					'chat_username_colour'	=> array('VCHAR:6', ''),
+					'message'				=> array('MTEXT', NULL),
+					'bbcode_bitfield'		=> array('VCHAR', ''),
+					'bbcode_uid'			=> array('VCHAR', ''),
+					'bbcode_options'		=> array('USINT', 7),
+				),
+				'PRIMARY_KEY'	=> 'id',
+				'KEYS'			=> array(
+					'time'		=> array('INDEX', 'chat_time'),
+				),
+			)),
+		),
+	),
 );

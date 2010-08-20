@@ -1,18 +1,6 @@
 <?php
 /**
  *
- * @package Ajax Chat Installation
- * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License
- *
- */
-
-/**
- * @ignore
- */
-<?php
-/**
- *
  * @author Erik Frèrejean (erikfrerejean@phpbb.com) http://www.erikfrerejean.nl
  *
  * @package phpBB3
@@ -27,9 +15,9 @@
 define('UMIL_AUTO', true);
 define('IN_PHPBB', true);
 define('IN_INSTALL', true);
-PHPBB_ROOT_PATH = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './../';
-PHP_EXT = substr(strrchr(__FILE__, '.'), 1);
-include(PHPBB_ROOT_PATH . 'common.' . PHP_EXT);
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './../';
+$phpEx = substr(strrchr(__FILE__, '.'), 1);
+include($phpbb_root_path . 'common.' . $phpEx);
 
 // Its possible the hook isn't loaded at this point. If that is the case do it manually
 if (!class_exists('hook_ajax_chat'))
@@ -37,9 +25,9 @@ if (!class_exists('hook_ajax_chat'))
 	require PHPBB_ROOT_PATH . 'includes/hooks/hook_ajax_chat.' . PHP_EXT;
 }
 
-ajax_chat_phpbb::$user->session_begin();
-ajax_chat_phpbb::$auth->acl(ajax_chat_phpbb::$user->data);
-ajax_chat_phpbb::$user->setup();
+$user->session_begin();
+$auth->acl($user->data);
+$user->setup();
 
 if (!file_exists(PHPBB_ROOT_PATH . 'umil/umil_auto.' . PHP_EXT))
 {

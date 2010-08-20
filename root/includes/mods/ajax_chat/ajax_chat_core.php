@@ -33,6 +33,9 @@ class ajax_chat_core
 	{
 		// Include the main language file
 		ajax_chat_phpbb::$user->add_lang('mods/ajax_chat/common');
+
+		// Load the constants
+		require PHPBB_ROOT_PATH . 'includes/mods/ajax_chat/constants.' . PHP_EXT;
 	}
 
 	/**
