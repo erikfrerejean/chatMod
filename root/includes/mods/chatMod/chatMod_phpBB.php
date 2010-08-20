@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat
+ * @package ChatMod
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -19,9 +19,9 @@ if (!defined('IN_PHPBB') || !defined('IN_CHAT'))
  * Class that is used to replace/mimic phpBB specific functions. This class
  * also contains static instances of the main phpBB objects/variables so they
  * don't have to be globalised everywhere
- * @package Ajax Chat
+ * @package ChatMod
  */
-abstract class ajax_chat_phpbb
+abstract class chatMod_phpbb
 {
 	/**@#+
 	 * @var mixed all the phpBB common used objects

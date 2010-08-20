@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat
+ * @package ChatMod
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -16,15 +16,15 @@ if (!defined('IN_PHPBB') || !defined('IN_CHAT'))
 }
 
 /**
- * The main Ajax Chat class
- * @package Ajax Chat
+ * The main Chat class
+ * @package ChatMod
  */
-class ajax_chat_core
+class chatMod_core
 {
 	/**
 	 * Holding an object of itself
 	 */
-	private static $ajax_chat_core = null;
+	private static $chatMOD_core = null;
 
 	/**
 	 * Private class constructor.
@@ -32,10 +32,10 @@ class ajax_chat_core
 	private function __construct()
 	{
 		// Include the main language file
-		ajax_chat_phpbb::$user->add_lang('mods/ajax_chat/common');
+		chatMod_phpbb::$user->add_lang('mods/chatMod/common');
 
 		// Load the constants
-		require PHPBB_ROOT_PATH . 'includes/mods/ajax_chat/constants.' . PHP_EXT;
+		require PHPBB_ROOT_PATH . 'includes/mods/chatMod/constants.' . PHP_EXT;
 	}
 
 	/**
@@ -43,11 +43,11 @@ class ajax_chat_core
 	 */
 	public static function get_instance()
 	{
-		if ((self::$ajax_chat_core instanceof ajax_chat_core) === false)
+		if ((self::$chatMOD_core instanceof chatMod_core) === false)
 		{
-			self::$ajax_chat_core = new ajax_chat_core();
+			self::$chatMOD_core = new chatMod_core();
 		}
 
-		return self::$ajax_chat_core;
+		return self::$chatMOD_core;
 	}
 }
