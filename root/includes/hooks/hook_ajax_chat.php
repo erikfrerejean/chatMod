@@ -48,6 +48,7 @@ abstract class hook_ajax_chat
 		// Include all files we need no matter what
 		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_core.' . $phpEx;
 		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_phpbb.' . $phpEx;
+		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_JSON.' . $phpEx;
 
 		// Load all the required classes
 		ajax_chat_phpbb::init();
