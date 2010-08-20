@@ -66,6 +66,8 @@ abstract class hook_ajax_chat
 
 		ajax_chat_phpbb::$template->assign_vars(array(
 			'T_AJAX_CHAT_SCRIPTS_PATH'	=> "{$web_path}styles/scripts",
+
+			'U_CHAT_ACTION'	=> append_sid(PHPBB_ROOT_PATH . 'includes/mods/ajax_chat/chat_handler.' . PHP_EXT),
 		));
 	}
 }
