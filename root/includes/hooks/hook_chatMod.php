@@ -67,7 +67,7 @@ abstract class hook_chatMod
 		chatMod_phpbb::$template->assign_vars(array(
 			'T_CHAT_MOD_SCRIPTS_PATH'	=> "{$web_path}styles/scripts",
 
-			'U_CHAT_ACTION'	=> append_sid(PHPBB_ROOT_PATH . 'includes/mods/chatMod/chat_handler.' . PHP_EXT),
+			'U_CHAT_SUBMIT'	=> append_sid(PHPBB_ROOT_PATH . 'includes/mods/chatMod/chat_handler.' . PHP_EXT, array('mode' => 'submit')),
 		));
 	}
 }

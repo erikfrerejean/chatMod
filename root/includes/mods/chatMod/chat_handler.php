@@ -19,3 +19,19 @@ include($phpbb_root_path . 'common.' . $phpEx);
 $user->session_begin();
 $auth->acl($user->data);
 $user->setup();
+
+// Variable used to output data back to the controller
+$_responce = '';
+
+$chat = chatMod_core::get_instance();
+
+// Handle
+switch ($_REQUEST['mode'])
+{
+	case 'submit' :
+		$chat->handle_submit();
+	break;
+}
+
+// Output
+print($_responce);
