@@ -64,10 +64,10 @@ abstract class hook_chatMod
 	{
 		$web_path = (defined('PHPBB_USE_BOARD_URL_PATH') && PHPBB_USE_BOARD_URL_PATH) ? generate_board_url() . '/' : PHPBB_ROOT_PATH;
 
-		ajax_chat_phpbb::$template->assign_vars(array(
-			'T_AJAX_CHAT_SCRIPTS_PATH'	=> "{$web_path}styles/scripts",
+		chatMod_phpbb::$template->assign_vars(array(
+			'T_CHAT_MOD_SCRIPTS_PATH'	=> "{$web_path}styles/scripts",
 
-			'U_CHAT_ACTION'	=> append_sid(PHPBB_ROOT_PATH . 'includes/mods/ajax_chat/chat_handler.' . PHP_EXT),
+			'U_CHAT_ACTION'	=> append_sid(PHPBB_ROOT_PATH . 'includes/mods/chatMod/chat_handler.' . PHP_EXT),
 		));
 	}
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat
+ * @package ChatMod
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -17,9 +17,9 @@ if (!defined('IN_PHPBB') || !defined('IN_CHAT'))
 
 /**
  * A class to handle JSON data
- * @package Ajax Chat
+ * @package ChatMod
  */
-abstract class ajax_chat_JSON
+abstract class chatMod_JSON
 {
 	/**
 	 * Build JSON string
