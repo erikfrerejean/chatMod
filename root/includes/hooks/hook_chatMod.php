@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat
+ * @package ChatMod
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -17,9 +17,9 @@ if (!defined('IN_PHPBB'))
 
 /**
  * Class that control all used hooks
- * @package Ajax Chat
+ * @package ChatMod
  */
-abstract class hook_ajax_chat
+abstract class hook_chatMod
 {
 	/**
 	 * Method that registers all hooks
@@ -32,8 +32,8 @@ abstract class hook_ajax_chat
 		define ('IN_CHAT', true);
 
 		// Register all the hooks
-		$phpbb_hook->register('phpbb_user_session_handler', 'hook_ajax_chat::_init');
-		$phpbb_hook->register(array('template', 'display'), 'hook_ajax_chat::_set_global_template_vars');
+		$phpbb_hook->register('phpbb_user_session_handler', 'hook_chatMod::_init');
+		$phpbb_hook->register(array('template', 'display'), 'hook_chatMod::_set_global_template_vars');
 	}
 
 	/**
@@ -46,13 +46,13 @@ abstract class hook_ajax_chat
 		global $phpbb_root_path, $phpEx;
 
 		// Include all files we need no matter what
-		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_core.' . $phpEx;
-		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_phpbb.' . $phpEx;
-		require $phpbb_root_path . 'includes/mods/ajax_chat/ajax_chat_JSON.' . $phpEx;
+		require $phpbb_root_path . 'includes/mods/chatMod/chatMod_core.' . $phpEx;
+		require $phpbb_root_path . 'includes/mods/chatMod/chatMod_phpbb.' . $phpEx;
+		require $phpbb_root_path . 'includes/mods/chatMod/chatMod_JSON.' . $phpEx;
 
 		// Load all the required classes
-		ajax_chat_phpbb::init();
-		ajax_chat_core::get_instance();
+		chatMod_phpbb::init();
+		chatMod_core::get_instance();
 	}
 
 	/**
@@ -72,4 +72,4 @@ abstract class hook_ajax_chat
 	}
 }
 
-hook_ajax_chat::register($phpbb_hook);
+hook_chatMod::register($phpbb_hook);

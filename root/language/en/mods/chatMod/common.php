@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * install [English]
+ * common [English]
  *
- * @package Ajax Chat Language
+ * @package ChatMod Language
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -39,10 +39,5 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'INSTALL_AJAX_CHAT'				=> 'Install Ajax Chat',
-	'INSTALL_AJAX_CHAT_CONFIRM'		=> 'Are you sure that you want to install the Ajax Chat MOD?',
-	'UPDATE_AJAX_CHAT'				=> 'Update Ajax Chat',
-	'UPDATE_AJAX_CHAT_CONFIRM'		=> 'Are you sure that you want to update the Ajax Chat MOD to the latest version?',
-	'UNINSTALL_AJAX_CHAT'			=> 'Uninstall Ajax Chat',
-	'UNINSTALL_AJAX_CHAT_CONFIRM'	=> 'Are you sure that you want to uninstall the Ajax Chat MOD?',
+	'CHAT'	=> 'Chat',
 ));

@@ -20,9 +20,9 @@ $phpEx = substr(strrchr(__FILE__, '.'), 1);
 include($phpbb_root_path . 'common.' . $phpEx);
 
 // Its possible the hook isn't loaded at this point. If that is the case do it manually
-if (!class_exists('hook_ajax_chat'))
+if (!class_exists('hook_chatMod'))
 {
-	require PHPBB_ROOT_PATH . 'includes/hooks/hook_ajax_chat.' . PHP_EXT;
+	require PHPBB_ROOT_PATH . 'includes/hooks/hook_chatMod.' . PHP_EXT;
 }
 
 $user->session_begin();
@@ -35,18 +35,18 @@ if (!file_exists(PHPBB_ROOT_PATH . 'umil/umil_auto.' . PHP_EXT))
 }
 
 // The name of the mod to be displayed during installation.
-$mod_name = 'AJAX_CHAT';
+$mod_name = 'CHATMOD';
 
 /**
  * The name of the config variable which will hold the currently installed version
  * You do not need to set this yourself, UMIL will handle setting and updating the version itself.
  */
-$version_config_name = 'ajax_chat_version';
+$version_config_name = 'chatMod_version';
 
 /**
  * The language file which will be included when installing
  */
-$language_file = 'mods/ajax_chat/install';
+$language_file = 'mods/chatMod/install';
 
 // Get version info
 include(PHPBB_ROOT_PATH . 'install/versions.' . PHP_EXT);

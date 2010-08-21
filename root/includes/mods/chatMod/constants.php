@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat
+ * @package ChatMod
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -17,4 +17,4 @@ if (!defined('IN_PHPBB') || !defined('IN_CHAT'))
 
 //-- Tables
 global $table_prefix;
-define('AJAX_CHAT_TABLE',			$table_prefix . 'chat');
+define('CHAT_TABLE',				$table_prefix . 'chat');

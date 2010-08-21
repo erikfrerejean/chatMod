@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Ajax Chat Installation
+ * @package ChatMod installation
  * @copyright (c) 2010 Erik Frèrejean ( erikfrerejean@phpbb.com ) http://www.erikfrerejean.nl
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  *
@@ -27,7 +27,7 @@ $versions = array(
 		// Add the main chat table
 		'table_add' => array(
 			// The main Subject Prefix table
-			array(AJAX_CHAT_TABLE, array(
+			array(CHAT_TABLE, array(
 				'COLUMNS'	=> array(
 					'id'					=> array('UINT', NULL, 'auto_increment'),
 					'poster_id'				=> array('UINT', 0),
