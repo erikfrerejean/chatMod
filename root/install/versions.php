@@ -38,7 +38,7 @@ $versions = array(
 					'message'				=> array('MTEXT', NULL),
 					'bbcode_bitfield'		=> array('VCHAR', ''),
 					'bbcode_uid'			=> array('VCHAR', ''),
-					'bbcode_options'		=> array('USINT', 7),
+					'bbcode_options'		=> array('UINT:4', 7),
 				),
 				'PRIMARY_KEY'	=> 'id',
 				'KEYS'			=> array(
