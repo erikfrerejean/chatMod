@@ -3,27 +3,44 @@
 <!--<script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/JSON.js"></script>-->
 <script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/chat_handler.js"></script>
 
+<!-- The CSS -->
+<style type="text/css">
+#chat_box {
+    width: 100%;
+    height:300px;
+    overflow:auto;
+    float:left;
+}
+
+dt.chat-content {
+    width: 80% !important;
+}
+
+.chatform {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	background: #f9f9f9 none repeat-x 0 0;
+}
+</style>
+<!--<link href="{T_THEME_PATH}/mods/chatMod.css" rel="stylesheet" type="text/css" title="chatMod" />-->
+
+<form id="chat_box_form" title="{L_CHAT}" method="post" action="{U_CHAT_SUBMIT}">
 <div class="forabg">
     <div class="inner"><span class="corners-top"><span></span></span>
     <ul class="topiclist">
 	<li class="header">
 	    <dl class="icon">
 		<dt><a href="{U_CHAT}">{L_CHAT}</a></dt>
+		<dd>&nbsp;</dd>
 	    </dl>
 	</li>
     </ul>
     <ul id="chat_box" class="topiclist forums">
     </ul>
-    <form id="chat_box_form" title="{L_CHAT}" method="post" action="{U_CHAT_SUBMIT}">
-	<input type="text" name="message" id="message" class="inputbox" />
-	<input type="submit" class="button1" value="{L_SUBMIT}" name="submit" id="chat-submit" accesskey="s"/>
-    </form>
+    <div class="chatform">
+	<input type="text" name="message" id="message" class="inputbox" />&nbsp;<input type="submit" class="button1" value="{L_SUBMIT}" name="submit" id="chat-submit" accesskey="s" />
+    </div>
     <span class="corners-bottom"><span></span></span></div>
 </div>
-<!-- Chat prototype, is used when displaying posts -->
-<li id="chatProtoType" class="row" style="display: none;">
-    <dl>
-	<dt class="chat-content"></dt>
-	<dd class="chatter"></dd>
-    </dl>
-</li>
+</form>
