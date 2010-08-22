@@ -31,8 +31,6 @@ switch ($_REQUEST['mode'])
 	case 'submit' :
 		$_responce = $chat->handle_submit();
 	break;
-	default :
-		$_responce = 'Default case :/';
 }
 
 // Output
