@@ -1,0 +1,10 @@
+#chatboxbg {
+    height:300px;
+    overflow:auto;
+    float:left;
+}
+
+dt.chat-content {
+    background-color: #f00;
+    width: 80% !important;
+}
