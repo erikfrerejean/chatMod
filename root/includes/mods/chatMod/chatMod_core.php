@@ -61,7 +61,7 @@ class chatMod_core
 
 	/**
 	 * A user submitted a chat message, handle and store the message
-	 * @return parse_message Message parser object containing the just submitted chat
+	 * @return String JSON element with all required data
 	 */
 	public function handle_submit()
 	{
@@ -98,6 +98,17 @@ class chatMod_core
 		$sql = 'INSERT INTO ' . CHAT_TABLE . ' ' . chatMod_phpbb::$db->sql_build_array('INSERT', $sql_data);
 		chatMod_phpbb::$db->sql_query($sql);
 
-		// @todo, return for handle
+		// Now second pass it
+		$chat_parser->message = censor_text($chat_parser->message);
+		$chat_parser->bbcode_second_pass($chat_parser->message, $chat_parser->bbcode_uid, $chat_parser->bbcode_bitfield);
+
+		// Create the JSON data set
+		$JSON = array(
+			'chat_id'	=> chatMod_phpbb::$db->sql_nextid(),
+			'chat'		=> $chat_parser->message,
+			'poster'	=> get_username_string('full', chatMod_phpbb::$user->data['user_id'], chatMod_phpbb::$user->data['username'], chatMod_phpbb::$user->data['user_colour']),
+		);
+
+		return chatMod_JSON::_encode($JSON);
 	}
 }

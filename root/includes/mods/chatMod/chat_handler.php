@@ -29,9 +29,14 @@ $chat = chatMod_core::get_instance();
 switch ($_REQUEST['mode'])
 {
 	case 'submit' :
-		$chat->handle_submit();
+		$_responce = $chat->handle_submit();
 	break;
+	default :
+		$_responce = 'Default case :/';
 }
 
 // Output
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
+header('Content-type: application/json');
 print($_responce);

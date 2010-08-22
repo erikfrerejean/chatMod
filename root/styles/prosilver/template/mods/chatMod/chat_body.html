@@ -1,4 +1,5 @@
 <script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/jquery-1.4.2.min.js"></script>
+<!--<script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/JSON.js"></script>-->
 <script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/chat_handler.js"></script>
 
 <div class="forabg">
@@ -10,11 +11,11 @@
 		    </dl>
 	    </li>
     </ul>
-    <ul class="topiclist forums">
-	<form id="chat_box" title="{L_CHAT}" method="post" action="{U_CHAT_SUBMIT}">
-	    <input type="text" name="message" id="message" class="inputbox" />
-	    <input type="submit" class="button1" value="{L_SUBMIT}" name="submit" id="chat-submit" accesskey="s"/>
-	</form>
+    <ul id="chat_box" class="topiclist forums">
     </ul>
+    <form id="chat_box_form" title="{L_CHAT}" method="post" action="{U_CHAT_SUBMIT}">
+	<input type="text" name="message" id="message" class="inputbox" />
+	<input type="submit" class="button1" value="{L_SUBMIT}" name="submit" id="chat-submit" accesskey="s"/>
+    </form>
     <span class="corners-bottom"><span></span></span></div>
 </div>
