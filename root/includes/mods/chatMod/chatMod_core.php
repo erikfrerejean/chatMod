@@ -112,7 +112,8 @@ class chatMod_core
 		$JSON = array(
 			'chat_id'	=> chatMod_phpbb::$db->sql_nextid(),
 			'chat'		=> $chat_parser->message,
-			'poster'	=> get_username_string('full', chatMod_phpbb::$user->data['user_id'], chatMod_phpbb::$user->data['username'], chatMod_phpbb::$user->data['user_colour']),
+			'poster'	=> utf8_ucfirst(chatMod_phpbb::$user->lang['POST_BY_AUTHOR'] . ' ' . get_username_string('full', chatMod_phpbb::$user->data['user_id'], chatMod_phpbb::$user->data['username'], chatMod_phpbb::$user->data['user_colour'])),
+			'time'		=> chatMod_phpbb::$user->format_date($this->now[0]),
 		);
 
 		// Switch back
