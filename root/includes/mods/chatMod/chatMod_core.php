@@ -98,6 +98,12 @@ class chatMod_core
 		$sql = 'INSERT INTO ' . CHAT_TABLE . ' ' . chatMod_phpbb::$db->sql_build_array('INSERT', $sql_data);
 		chatMod_phpbb::$db->sql_query($sql);
 
+		// Force BBCode init at this point
+		$chat_parser->bbcode_cache_init();
+
+		// Got to switch $phpbb_root_path here, else links break :/
+		chatMod_phpbb::switch_phpbb_var('phpbb_root_path');
+
 		// Now second pass it
 		$chat_parser->message = censor_text($chat_parser->message);
 		$chat_parser->bbcode_second_pass($chat_parser->message, $chat_parser->bbcode_uid, $chat_parser->bbcode_bitfield);
@@ -108,6 +114,9 @@ class chatMod_core
 			'chat'		=> $chat_parser->message,
 			'poster'	=> get_username_string('full', chatMod_phpbb::$user->data['user_id'], chatMod_phpbb::$user->data['username'], chatMod_phpbb::$user->data['user_colour']),
 		);
+
+		// Switch back
+		chatMod_phpbb::switch_phpbb_var('phpbb_root_path');
 
 		return chatMod_JSON::_encode($JSON);
 	}

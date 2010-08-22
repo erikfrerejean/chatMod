@@ -1,15 +1,19 @@
+<!-- All script files -->
 <script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/jquery-1.4.2.min.js"></script>
 <!--<script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/JSON.js"></script>-->
 <script type="text/javascript" src="{T_CHAT_MOD_SCRIPTS_PATH}/chat_handler.js"></script>
 
+<!-- The CSS -->
+<link href="{T_THEME_PATH}/mods/chatMod.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
 <div class="forabg">
     <div class="inner"><span class="corners-top"><span></span></span>
     <ul class="topiclist">
-	    <li class="header">
-		    <dl class="icon">
-			    <dt><a href="{U_CHAT}">{L_CHAT}</a></dt>
-		    </dl>
-	    </li>
+	<li class="header">
+	    <dl class="icon">
+		<dt><a href="{U_CHAT}">{L_CHAT}</a></dt>
+	    </dl>
+	</li>
     </ul>
     <ul id="chat_box" class="topiclist forums">
     </ul>
@@ -19,3 +23,10 @@
     </form>
     <span class="corners-bottom"><span></span></span></div>
 </div>
+<!-- Chat prototype, is used when displaying posts -->
+<li id="chatProtoType" class="row" style="display: none;">
+    <dl>
+	<dt class="chat-content"></dt>
+	<dd class="chatter"></dd>
+    </dl>
+</li>

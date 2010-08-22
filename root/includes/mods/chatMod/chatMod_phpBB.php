@@ -66,5 +66,38 @@ abstract class chatMod_phpbb
 		{
 			define('PHP_EXT', $phpEx);
 		}
+
+		if (!defined('WEB_ROOT'))
+		{
+			// Used for links
+			define('WEB_ROOT', './');
+		}
+	}
+
+	/**
+	 * Wrapper to switch phpBB variables between their different forms that are
+	 * used by this MOD.
+	 * @param	String	$var	The variable to switch
+	 * @return	void
+	 */
+	static public function switch_phpbb_var($var)
+	{
+		switch ($var)
+		{
+			// Switch $phpbb_root_path between PHPBB_ROOT_PATH and WEB_ROOT
+			case 'phpbb_root_path' :
+				global $phpbb_root_path;
+
+				// Switch it
+				if ($phpbb_root_path == PHPBB_ROOT_PATH)
+				{
+					$phpbb_root_path = WEB_ROOT;
+				}
+				else if ($phpbb_root_path == WEB_ROOT)
+				{
+					$phpbb_root_path = PHPBB_ROOT_PATH;
+				}
+			break;
+		}
 	}
 }

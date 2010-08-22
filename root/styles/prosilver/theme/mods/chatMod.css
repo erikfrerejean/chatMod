@@ -1,0 +1,13 @@
+/*
+#chat_box {
+    width: 85% !important;
+}
+*
+dt.chat-content {
+    width: 90%;
+}
+*/
+#chat_box dd.chatter {
+    width: 10%;
+    font-size: 1.1em;
+}
